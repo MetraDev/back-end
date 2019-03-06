@@ -6,12 +6,12 @@ const environments = {
 
 
 }
-const ENV = process.env.NODE_ENV || environments.development;
+const ENV = process.env.NODE_ENV || environments.produccion;
 
 
 const config ={
 
-    [environments.development]:{
+    [environments.produccion]:{
         MongoDB:{
             URI: 'mongodb+srv://sergio:porlamadre3@cluster0-ndbon.mongodb.net/unicorn?retryWrites=true',
             host:"localhost",
@@ -20,7 +20,7 @@ const config ={
         },
         PORT:3000
 
-    },[environments.produccion]:{
+    },[environments.preproduccion]:{
 
     MongoDB:{
         URI: 'mongodb+srv://sergio:porlamadre3@cluster0-ndbon.mongodb.net/unicorn?retryWrites=true',
