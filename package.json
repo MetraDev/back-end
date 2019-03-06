@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "test": "jest --watchAll",
-    "start": "export NODE_ENV=development || NODE_ENV=development || SET \"NODE_ENV=development\" && node index.js",
-    "dev": " export NODE_ENV=development || NODE_ENV=development || SET \"NODE_ENV=development\" && nodemon index.js"
+    "start": "node index.js",
+    "dev": " node index.js"
   },
   "author": "",
   "license": "ISC",
