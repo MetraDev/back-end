@@ -13,7 +13,7 @@ const config ={
 
     [environments.development]:{
         MongoDB:{
-            URI: "localhost:27017/unicorn_dev",
+            URI: "mongodb+srv://sergio:porlamadre3@cluster0-ndbon.mongodb.net/unicorn?retryWrites=true",
             host:"localhost",
             port:"27017",
             db:"unicorn"
@@ -23,7 +23,7 @@ const config ={
     },[environments.preproduccion]:{
 
     MongoDB:{
-        URI: "localhost:27017/unicorn",
+        URI: "mongodb+srv://sergio:porlamadre3@cluster0-ndbon.mongodb.net/unicorn?retryWrites=true",
             host:"localhost",
             port:"27017",
             db:"unicorn"
