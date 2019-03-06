@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const authorization = require('../middlewares/authorization');
 
-router.get('/', authorization, (req, res) => {
+router.get('/', (req, res) => {
     Role.find().then(data => {
 
 
