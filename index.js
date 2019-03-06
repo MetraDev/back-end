@@ -1,7 +1,7 @@
 require('./config/environment');
 require('./config/mongoose');
 //const port = +process.argv.slice(2)[0]|| process.env.PORT || 3001;
-const PORT = 3000;
+const PORT = process.env.PORT;
 const express = require('express')
 const app = express();
 const bodyParser= require('body-parser')
