@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Role = require('../Models/Role');
+const Role = require('../Models/role');
 const mongoose = require('mongoose');
 
 const authorization = require('../middlewares/authorization');
