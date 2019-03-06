@@ -1,34 +1,25 @@
-var express = require('express');
-var path = require('path');
+
+require('./config/environment');
+require('./config/mongoose');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+
+
+const PORT = process.env.PORT;
+const express = require('express')
+const app = express();
+const bodyParser= require('body-parser')
 const cors = require('cors')
-var app = express();
 
 
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors())
+app.use(bodyParser.json())
 
-app.use(cors());
-
-
-
-app.use('/team', require ('./Routes/team.js'))
 app.use('/user', require ('./Routes/users.js'))
 app.use('/role', require ('./Routes/role.js'))
-app.use('/city', require ('./Routes/city.js'))
-app.use('/idea', require ('./Routes/idea.js'))
-app.use('/auth-users', require ('./Routes/reg'))
-app.use('/authentication', require ('./Routes/regUser.js'))
-app.use('/businessmodel', require ('./Routes/businessmodel.js'))
+
 
 
 
@@ -49,5 +40,7 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
+
+app.listen(PORT, ()=> console.log(`Servidor escuchando en el puerto ${PORT}`))
 
 module.exports = app;

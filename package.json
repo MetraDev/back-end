@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "jest --watchAll",
-    "start": "node ./bin/www",
+    "start": "nodemon ./bin/www",
     "dev": " export NODE_ENV=development || NODE_ENV=development || SET \"NODE_ENV=development\" && nodemon index.js"
   },
   "author": "",
