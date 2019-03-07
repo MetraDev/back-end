@@ -11,9 +11,7 @@ const cors = require('cors')
 
 app.use(cors())
 app.use(bodyParser.json())
-
 app.use('/team', require ('./Routes/team.js'))
-app.use('/', require ('./Routes/regUser.js'))
 app.use('/user', require ('./Routes/users.js'))
 app.use('/role', require ('./Routes/role.js'))
 app.use('/city', require ('./Routes/city.js'))
