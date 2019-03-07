@@ -8,6 +8,17 @@ const UserSchema = mongoose.Schema({
         required: true,
 
     },
+    email: {
+        type: String,
+        required: true,
+        trim: true,
+        unique: false,
+        validate: {
+            isAsync: true,
+            validator: (email) => validator.isEmail(email),
+            message: '{VALUE} is not a valid email'
+        }
+    },
     surname: {
         type: String,
         required: true,
