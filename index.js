@@ -1,4 +1,4 @@
-require('./config/environment');
+
 require('./config/mongoose');
 //const port = +process.argv.slice(2)[0]|| process.env.PORT || 3001;
 const PORT = process.env.PORT;
