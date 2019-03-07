@@ -40,15 +40,19 @@ router.put('/:id', (req,res)=>{
 
 
 router.post('/', (req, res) => {
+    if(!req.body) return res.status(400).send(`bad`);
+
     RegUser.findOne({
         email:req.body.email,
         password:req.body.password
-    }
-    ).then(user => {
+
+    }).then(user => {
+
         user.generateAuthToken().then(token => {
             // console.log(JSON.stringify(user.toObject(), undefined, 2))
+
             res.send({accessToken: token});
-        }).catch( err => res.send(err))
+        }).catch( err => res.status(404)('no coincide',err))
     })
 });
 

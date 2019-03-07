@@ -22,7 +22,7 @@ router.post('/',(req,res)=>{
     const data = req.body;
     new RegUser({...data}).save().then(data=>{
         res.send(data);
-    })
+    }).catch(err => res.status(400).send(`algo salio mal`, err))
 })
 
 
